@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+ <div class="container">
+<body>
+<h3> Payroll System </h3>
+<br/>Enter the number of houres worked
+<input type="integer" id="hours_worked" name="hours_worked">
+<br>
+<button onclick="submit() , payment()">Calculate</button>
+<button onclick="reset()"> Reset</button>
+
+<div id="form_submit" >
+    <p >Regular Hours  <input type="integer" name="demo" id="demo">  </p>
+    <p>Overtime Hours: <input type="integer" name="demo2"  id="demo2">  </p>
+    <p >Gross Pay (Regular Hours @ $10 overtime @ $15) <input type="integer" name="demo3" id="demo3">  </p>
+    <p >Tax Withhold( 20% of Gross Pay )$  <input type="integer" name="demo4" id="demo4">  </p>
+    <p >Net Pay: $<input type="integer" name="demo5" id="demo5">  </p>
+    
+</div>
+
+</div>
+
+<script >
+    function submit(){
+        var hours_worked=document.getElementById("hours_worked").value;;
+        if(hours_worked<=40){
+        var hrs=document.getElementById("hours_worked").value;
+        var reg = 10* hrs;
+        document.getElementById("demo").value=hrs;
+        document.getElementById("demo3").value = reg;
+            var tax = reg* 0.2;
+            document.getElementById("demo4").value = tax;
+            var net_pay = reg - tax;
+            document.getElementById("demo5").value = net_pay;
+        }else if(hours_worked > 40){
+            var overtime = hours_worked- 40;
+            document.getElementById("demo2").value=overtime;
+            var hrs = 40;
+            document.getElementById("demo").value=hrs;
+            var reg = 10* hrs;
+            var over=15*overtime;
+            var gross_pay=reg +over;
+            document.getElementById("demo3").value = gross_pay;
+        var tax = gross_pay * 0.2;
+            document.getElementById("demo4").value = tax;
+            var net_pay = gross_pay - tax;
+            document.getElementById("demo5").value = net_pay;
+        }
+    } 
+         
+    
+    function reset(){
+        var items=document.getElementsByTagName("input");
+        for (let i = 0; i < items.length; i++) {
+            items[i].value="";
+            
+        }
+    }
+
+</script>
+</body>
+</html>
