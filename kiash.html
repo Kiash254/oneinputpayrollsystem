@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Enter the number of hours worked  <input type="integer" id="hours_worked" name="hours_worked"></p>
+    <button onclick="myname()">calculate</button>
+<!-- <button onclick="myName()">Calculate</button> -->
+<p id="demo"></p>
+
+    <script>
+        function myName(){
+       // const working_hours=40;
+        //var hours_worked=prompt("please Enter hours worked last week");
+        var hours_worked=document.getElementById("hours_worked").value; 
+        //var overtime=hours_worked-working_hours;
+        //var gross_pay=(hours_worked*10) + parseInt(overtime*15)
+        //var tax=gross_pay*0.2;
+        //var net_pay=gross_pay-tax;
+       // document.write("hours worked is :" + hours_worked);
+        //document.write("ovetime hours worked is "+ overtime);
+        //document.write("Gross_pay is :"+ tax);
+        //document.write("net pay is" + net_pay );
+        results = "Regular Hours:" + hours_worked + ".";
+        document.getElementById("demo").innerHTML = results;
+  
+       }
+
+    </script>
+</body>
+</html>

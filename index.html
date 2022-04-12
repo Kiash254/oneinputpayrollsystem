@@ -1,0 +1,47 @@
+<html>
+ <div class="container">
+<body>
+<h3> Payroll System </h3>
+<br/>Enter the number of houres worked
+<input type="integer" id="hours_worked" name="hours_worked">
+<br>
+<button onclick="solve_salary()">Calculate</button>
+<button type="reset"> Reset</button><br>
+
+<br/> Daily Rate 
+<input type="text" id="daily_rate" name="daily_rate">
+<!-- <br> -->
+ <br/> Number of Days Work -->
+ <input type="text" id="no_days_work" name="no_days_work">
+<!-- <br> -->
+<!-- <br> -->
+  
+<br><br>
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3" ></p>
+</div>
+<script>
+  function solve_salary() {
+    var hours_worked = document.getElementById("hours_worked").value;
+ var  daily_rate = document.getElementById("daily_rate").value;
+ var  no_days_work = document.getElementById("no_days_work").value;
+    results = "Regular Hours:" + hours_worked + ".";
+    //overtime
+    
+     //var overtime=hours_worked-40;
+     // results="Overtime" + overtime + " . ";
+
+
+     gross_pay= parseFloat(daily_rate) * no_days_work;
+  
+      
+   results2 ="Gross pay is: " + gross_pay.toFixed(2)+".";
+       net_pay = 
+      document.getElementById("demo").innerHTML = results;
+   document.getElementById("demo2").innerHTML = results2;
+  
+  }
+</script>
+</body>
+</html>

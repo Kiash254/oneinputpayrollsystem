@@ -1,0 +1,47 @@
+<html>
+ <div class="container">
+<body>
+<h3> Payroll System </h3>
+<br/>Enter the number of houres worked
+<input type="integer" id="hours_worked" name="hours_worked">
+<br>
+<button onclick="solve_salary()">Calculate</button>
+
+  
+<br><br>
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+</div>
+<script>
+  function solve_salary() {
+     var working_hours=40;
+    var hours_worked = document.getElementById("hours_worked").value;
+    var overtime=hours_worked-working_hours;
+    var regular_hours=hours_worked-overtime;
+    if (hours_worked= 40){      
+        results = "Regular Hours:" + regular_hours + ".";
+}
+if(hours_worked>=40){    
+    re="Overtime Hours is :" + overtime + " . ";
+}
+var reg = regular_hours * 10;
+var over = overtime * 15;
+var Gross_pay= reg + over;
+payment= "Gross Pay (@ reg $10 @ overtime $15): " + Gross_pay.toFixed(2) + ".";
+var tax=Gross_pay*0.2;
+tax_pay="Tax Withhold(20% of gross pay )"+ tax + "."; 
+var net_pay=Gross_pay-tax;
+net="Net Pay $ "+net_pay;
+      document.getElementById("demo").innerHTML = results;
+      document.getElementById("demo2").innerHTML=re;
+      document.getElementById("demo3").innerHTML=payment;
+      document.getElementById("demo4").innerHTML=tax_pay;
+      document.getElementById("demo5").innerHTML=net;
+  
+  }
+</script>
+</body>
+</html>
